@@ -1,13 +1,38 @@
 body {
     text-align: center;
-    font-family:bold Verdana, sans-serif;
-    background-color: black;/*#FBF6CC;*/
-    margin: 4%;
+    font-family: bold Verdana, sans-serif;
+    /*background-color: #FBF6CC;*/
+    color: #FBF6CC;
+    background-image: url("../images/pexels-584587.jpg");
+    background-size: cover;
 }
 h1 {
     color: burlywood;
 }
 
+nav {
+    background-color: #575757;
+    opacity: 95%;
+    padding: 15px 100px;
+}
+
 .row {
     border-left: solid burlywood strips;
 }
+
+.logo {
+    max-width: 10%;
+}
+
+img {
+    max-width: 100px;
+}
+
+.character {
+    background-color: #000;
+    opacity: 95%;
+    padding: 15px 8%;;
+}
+
+
+    

@@ -11,7 +11,7 @@ let year = today.getFullYear()
     let x = canvas.width / 0;
     let y = canvas.height / 2;
     
-
+    backgroundColor = "#000000";
 let datePath = 10;
 
 //HTML Canvas Animation

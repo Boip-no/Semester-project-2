@@ -33,7 +33,12 @@
 //     newRequest.open("GET", URL);
 //     newRequest.send();
 // }
-
+$(document).ready(function () {
+    $('.third-button').on('click', function () {
+  
+      $('.animated-icon3').toggleClass('open');
+    });
+  });
 // apiCall("https://cors-anywhere.herokuapp.com/https://anapioficeandfire.com/api/houses/378/");
 
 //      2       Connect to the API above using vanilla JavaScript. 
@@ -78,11 +83,11 @@ hero("https://cors-anywhere.herokuapp.com/https://anapioficeandfire.com/api/hous
 
 
 // - store both variables in localStorage
-/*function passValue() {
+function passValue() {
     var firstPlayer=document.getElementById("nextPage").value;
     var secondPlayer=document.getElementById("nextPage").value;
     localStorage.setItem("firstValue", firstPlayer, "secondValue", secondPlayer);
-    return true;
-}*/
+    return false;
+}
 
 
