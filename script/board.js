@@ -9,7 +9,7 @@
 //- use addElement or innerHTML to add the token to the square
 //- if the score is equal or greater than the last square store the winner in local storage and move to the winners page
 
-Window.rollDice = ()=> {
+/*Window.rollDice = ()=> {
   const max = 6;
   const roll = Math.ceil(Math.random() * max);
   console.log("You rolled", roll);
@@ -40,4 +40,4 @@ const renderBoard = ()=>{
   console.log("Render Board!");
 }
 
-renderBoard();
+renderBoard();*/
