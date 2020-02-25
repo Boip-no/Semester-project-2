@@ -1,0 +1,24 @@
+$red:   #a21734;
+$white: #fbf6cc;
+
+$contFont: "Open Sans", sans-serif; 
+
+:root {
+    /* Change this to change the appearance of the hexaons */
+    --hex-width: 90px; 
+    --hex-between: 5px;
+
+    /* Other hexagon dimentions */
+    --hex-height: calc(var(--hex-width) / 1.73);
+    --hex-margin: calc(var(--hex-width) / 2);
+    --hex-border: calc(var(--hex-margin) / 1.73);
+    --hex-transition: all .2s ease;
+    
+    /* Colors */
+    --color-hex-default: #000000;
+    --color-hex-hover:   #fbf6cc;
+    --color:             #343434;
+    --red:               #a21734;
+    --blue:              #192c4a;
+    --whiteIsh:          #fbf6cc;
+  }

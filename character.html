@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/styles.css">
+    <title>Game of Thrones</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="navbar-brand"><img class="logo" src="images/logo3.png" alt="hexagon tiles with dice and multi-coloured tile"></a>
+                <h1>Game of Thrones Board Game</h1>
+        </nav>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div id="characterOneContainer" class="col-sm-2 choose-character"></div>
+
+                <div class="col-md-8 banner">
+                    <div class="col-md-12">
+                        <div class="col-md-6 left">
+                            <h2>Character One</h2>
+                            <div class="banner" id="playerOne">
+                            </div>
+                        </div>
+                        <div class="col-md-6 right">
+                            <h2>Character Two</h2>
+                            <div class="banner" id="playerTwo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <button onclick="removeCharacters()">Remove characters</button>
+                        <form action="board.html" onsubmit="return(passValue());">
+                            <input type="submit" value="Play">
+                        </form>
+                    </div>
+                </div>
+
+                <div id="characterTwoContainer" class="col-sm-2 choose-character"></div>
+            </div>
+        </div>
+    </main>  
+    <footer>
+        <p>Copyright by Jorun Pihl Bratteng</p>
+    </footer>
+    <script src="script/script.js"></script>
+    <script src="script/board.js"></script>
+    </body>
+</html>

@@ -1,82 +1,82 @@
 //  ---    1 Have an array of objects that have the character details
-
-// fetch("https://anapioficeandfire.com/api/houses/378")
-// .then(response => {
-//     var newRequest = new XMLHttpRequest();
-//     newRequest.onreadystatechange = function() {
-//         if (newRequest.readyState === 4) {
-//             if (newRequest.status === 200) {
-//                 var data = JSON.parse(newRequest.responseText);
-//                 if (amiibo) {
-//                     amiibo(data);
-//                 }
-//             }
-//         }
-//     };
-//     newRequest.open("GET", URL);
-//     newRequest.send();
-// });
-
- function hero(apiUrl){
-     var newRequest = new XMLHttpRequest();
-     newRequest.onreadystatechange = function() {
-         if (newRequest.readyState === 4) {
-             if (newRequest.status === 200) {
-                 var data = JSON.parse(newRequest.responseText);
-                 console.log(data.responseText);
-             }
-         }
-     };
-     newRequest.open("GET", URL);
-     newRequest.send();
- }
- //hero("https://cors-anywhere.herokuapp.com/https://anapioficeandfire.com/api/houses/378/");
-
-//function hero(URL, amiibo) {
-//  var newRequest = new XMLHttpRequest();
-//       newRequest.onreadystatechange = function() {
-//           if (newRequest.readyState === 4) {
-//                if (newRequest.status === 200) {
-//                   var data = JSON.parse(newRequest.responseText);
-//                    if (amiibo) {
-//                        amiibo(data);
-//                    }
-//                }
-//           }
-//    };
-//    newRequest.open("GET", URL);
-//    newRequest.send();
-//}
-
-let houses = new Array();
-//      3       Console log your output.
-hero("https://cors-anywhere.herokuapp.com/https://anapioficeandfire.com/api/houses/378", function(data){
-    houses.push([data.name, data.region, data.coatOfArms, data.titles]);
-    // console.log(data.name);
-    // console.log(data.region);
-    // console.log(data.coatOfArms);
-    console.log.houses[0].name
-});
-
-
-
+var characters = [
+    {Name: "Jon Snow", Culture: "Valyrian", img: "targaryanFlag.jpg"},
+    {Name: "Stannis Baratheon", Culture: "Northmen", img: "baratheonFlag.jpg"},
+    {Name: "Sansa Stark", Culture: "Northmen", img: "starkFlag.jpg"},
+    {Name: "Daenarys Targaryan", Culture: "Valyrian", img: "targaryanFlag.jpg"},
+    {Name: "Tyrion Lannister", Culture: "Westerman", img: "lannisterFlag.jpg"},
+    {Name: "Cercei Lannister", Culture: "Westerman", img: "lannisterFlag.jpg"},
+    {Name: "Gregor Clegane", Culture: "-", img: "cleganeFlag.jpg"},
+    {Name: "Jorah Mormont", Culture: "Northmen", img: "mormontFlag.jpg"},
+    {Name: "Arya Stark", Culture: "Northmen", img: "starkFlag.jpg"},
+    {Name: "Brandon Stark", Culture: "Northmen", img: "starkFlag.jpg"},
+]
 
 // 2 Loop through the array to create the character cards
-//for (let i = 0; i < houses.lenght; i++) {
- //   console.log(houses[i].dataset)}
-
 // 3 have two variables, one for each character
+let characterOne = null;
+let characterTwo = null;
 
+function selectCharacter(index) {
+    let chosenCharacter = characters[index];
+
+    if (characterOne == null)
+    {
+        characterOne = chosenCharacter;
+        document.getElementById("playerOne").innerHTML += chosenCharacter.Name + "<img src='images/"+chosenCharacter.img+"'></img>";
+    }
+    else{
+        characterTwo = chosenCharacter;
+        document.getElementById("playerTwo").innerHTML = chosenCharacter.Name + "<img src='images/"+chosenCharacter.img+"'></img>";
+    }
+}
+
+function removeCharacters(){
+    characterOne = null;
+    characterTwo = null;
+    document.getElementById("playerOne").innerHTML = "";
+    document.getElementById("playerTwo").innerHTML = "";
+}
+
+let createCards = 10;
+
+/*When it says it is number 1, that should increment by the number that it is in the loop.*/   
+for (let i = 0; i < createCards; i++) {
+    let cardString;
+    let character = characters[i];
+
+    cardString = 
+        "<a onclick='selectCharacter("+i+")'>" +
+            "<div>" +
+                "<input name='"+character.Name+"' id='character' type='submit' value='"+character.Name+"'>" +
+                "<br/>" +
+                "<img class='character' src='images/"+character.img+"' alt=''>" +
+                "<h6>" +
+                    character.Culture + 
+                "</h6>" +
+            "</div>";
+        "</a>";
+    
+    document.getElementById(i % 2 == 0 ? "characterOneContainer" : "characterTwoContainer").innerHTML += cardString;
+}
+
+let cards = document.querySelectorAll("div.card");
+for (let i = 0; i < cards.length; i++){
+    console.log(cards[i].dataset.number);
+}
 
 // 4 when the user clicks a card store the character in a variable
 
 
 // 5 store both variables in localStorage
 function passValue() {
-    var firstPlayer=document.getElementById("nextPage").value;
-    var secondPlayer=document.getElementById("nextPage").value;
-    localStorage.setItem("firstValue", firstPlayer, "secondValue", secondPlayer);
-    return false;
+    if (characterOne == null || characterTwo == null)
+    {
+        alert("You have to choose two characters");
+        return false;
+    } else
+    {
+        localStorage.getItem("firstValue", characterOne, "secondValue", characterTwo);
+        return true;
+    }
 }
-
-

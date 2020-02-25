@@ -1,5 +1,5 @@
 nav {
-    background-image: linear-gradient(#000000, #575757);
+    background-image: linear-gradient(to right, #575757, #202020, #000000);
     padding: 15px;
     text-align: center;
 }
@@ -8,3 +8,8 @@ nav {
     float: left;
     max-width: 60px;
   }
+  h1 {
+    font-size: 25px;
+    color: $red;
+    text-align: center;
+}

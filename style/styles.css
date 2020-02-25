@@ -1,148 +1,17 @@
-@import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
-nav {
-  background-image: linear-gradient(#000000, #575757);
-  padding: 15px;
-  text-align: center;
-}
+/* Error: Can't find stylesheet to import.
+ *    ,
+ * 12 | @import "partials/index";
+ *    |         ^^^^^^^^^^^^^^^^
+ *    '
+ *   styles.scss 12:9  root stylesheet */
 
-.logo {
-  float: left;
-  max-width: 60px;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a    \2577 \a 12 \2502  @import \"partials/index\";\d\a    \2502          ^^^^^^^^^^^^^^^^\a    \2575 \a   styles.scss 12:9  root stylesheet";
 }
-
-body {
-  text-align: center;
-  background-image: url(../images/pexels-584587.jpg);
-  color: #000;
-  height: 100vh;
-}
-
-.col-sm-4 {
-  background-color: #000;
-}
-.col-sm-4 img {
-  max-width: 150px;
-}
-
-main {
-  background-image: linear-gradient(#575757);
-  padding: 40 0px 40px 0;
-}
-
-:root {
-  /* Change this to change the appearance of the hexaons */
-  --hex-width: 90px;
-  --hex-between: 5px;
-  --amount: 10;
-  /* Other hexagon dimentions */
-  --hex-height: calc(var(--hex-width) / 1.73);
-  --hex-margin: calc(var(--hex-width) / 2);
-  --hex-border: calc(var(--hex-margin) / 1.73);
-  --hex-transition: all .2s ease;
-  /* Colors */
-  --color-hex-default: #000000;
-  --color-hex-hover: #fbf6cc;
-  --color: #343434;
-  --red: #a21734;
-  --blue: #192c4a;
-  --whiteIsh: #fbf6cc;
-}
-
-/* Hexagons */
-.hexagon-container {
-  display: grid;
-  grid-template-columns: var(--hex-width) var(--hex-width) var(--hex-width) var(--hex-width) var(--hex-width);
-  grid-auto-rows: calc(var(--hex-width) - 28.87px/2);
-  grid-gap: var(--hex-between) var(--hex-between);
-  padding-left: 25%;
-}
-
-.hexagon {
-  align-items: center;
-  background-color: var(--color-hex-default);
-  cursor: pointer;
-  display: flex;
-  fill: white;
-  height: var(--hex-height);
-  justify-content: center;
-  margin: var(--hex-border) 0;
-  position: relative;
-  transition: var(--hex-transition);
-  width: var(--hex-width);
-}
-
-.hexagon::after,
-.hexagon::before {
-  border-left: var(--hex-margin) solid transparent;
-  border-right: var(--hex-margin) solid transparent;
-  content: "";
-  left: 0;
-  position: absolute;
-  transition: var(--hex-transition);
-  width: 0;
-}
-
-.hexagon::after {
-  border-top: var(--hex-border) solid var(--color-hex-default);
-  top: 100%;
-  width: 0;
-}
-
-.hexagon::before {
-  border-bottom: var(--hex-border) solid var(--color-hex-default);
-  bottom: 100%;
-}
-
-.hexagon:hover {
-  background-color: var(--color-hex-hover);
-}
-
-.hexagon:hover::after,
-.hexagon:hover::before {
-  border-top-color: var(--color-hex-hover);
-  border-bottom-color: var(--color-hex-hover);
-}
-
-.hexagon:nth-child(10n+6),
-.hexagon:nth-child(10n+7),
-.hexagon:nth-child(10n+8),
-.hexagon:nth-child(10n+9),
-.hexagon:nth-child(10n+10) {
-  margin-left: calc(var(--hex-width) / 2 + var(--hex-between) / 2);
-}
-
-.hexagon > div {
-  height: 75%;
-  transition: var(--hex-transition);
-}
-
-/* Colors */
-.color {
-  background-color: var(--color);
-}
-
-.color::after,
-.color::before {
-  border-top-color: var(--color);
-  border-bottom-color: var(--color);
-}
-
-.color:hover {
-  fill: var(--color);
-}
-
-.multi-color {
-  background: var(--blue);
-}
-
-.multi-color::after,
-.multi-color::before {
-  border-top-color: var(--whiteIsh);
-  border-bottom-color: var(--red);
-}
-
-.multi-color:hover {
-  fill: var(--red);
-}
-
-/*# sourceMappingURL=styles.css.map */
