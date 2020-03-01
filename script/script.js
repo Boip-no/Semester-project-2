@@ -54,8 +54,31 @@ for (let i = 0; i < createCards; i++) {
                 "<h6>" +
                     character.Culture + 
                 "</h6>" +
-            "</div>";
+            "</div>" +
         "</a>";
+        // "<div id='carouselExampleControls' class='carousel slide' data-ride='carousel'>"
+        //     "<div class='carousel-inner'>" +
+        //         "<div class='carousel-item active'>" +
+        //             "<a onclick='selectCharacter("+i+")'>" +
+        //                 "<div>" +
+        //                     "<input name='"+character.Name+"' id='character' type='submit' value='"+character.Name+"'>" +
+        //                     "<br/>" +
+        //                     "<img class='character' src='images/"+character.img+"' alt=''>" +
+        //                     "<h6>" +
+        //                         character.Culture + 
+        //                     "</h6>" +
+        //                 "</div>" +
+        //             "</a>" +
+        //     "</div>" +
+        //     "<a class='carousel-control-prev' href='#carouselExampleControls' role='button' data-slide='prev'>" +
+        //         "<span class='carousel-control-prev-icon' aria-hidden='true'>" + "</span>" +
+        //         "<span class='sr-only'>" + "Previous" + "</span>" +
+        //     "</a>" +
+        //     "<a class='carousel-control-next' href='#carouselExampleControls' role='button' data-slide='next'>" +
+        //         "<span class='carousel-control-next-icon' aria-hidden='true'>"+ "</span>" +
+        //         "<span class='sr-only'>" + "Next" + "</span>" +
+        //     "</a>" +
+        // "</div>";
     
     document.getElementById(i % 2 == 0 ? "characterOneContainer" : "characterTwoContainer").innerHTML += cardString;
 }
@@ -76,7 +99,13 @@ function passValue() {
         return false;
     } else
     {
-        localStorage.getItem("firstValue", characterOne, "secondValue", characterTwo);
+        localStorage.setItem("playerOneName", characterOne.Name);
+        localStorage.setItem("playerOneImg", characterOne.img);
+        localStorage.setItem("playerOneCulture", characterOne.Culture);
+        localStorage.setItem("playerTwoName", characterTwo.Name);
+        localStorage.setItem("playerTwoImg", characterTwo.img);
+        localStorage.setItem("playerTwoCulture", characterTwo.Culture);
         return true;
     }
 }
+

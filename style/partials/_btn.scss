@@ -1,4 +1,12 @@
 .btn {
+    margin: 10px;
     background-color: $red;
-    color: blue;
+    color: $white;
+}
+
+.hexagon-container {
+    .btn {
+        position: absolute;
+        padding: 20px 0;
+    }
 }

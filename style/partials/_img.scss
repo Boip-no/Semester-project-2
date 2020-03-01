@@ -1,0 +1,16 @@
+.banner {
+    padding: 90;
+    color: $red;
+ 
+    img {
+     width: 200px;
+    }
+ }
+
+ img {
+    #img-0, #img-1 {
+        .character-banner {
+            width: 120px;
+        }
+    }
+ }

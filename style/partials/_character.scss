@@ -1,13 +1,11 @@
 
-.banner {
-   padding: 50;
-   color: $red;
-}
-
-.right {
+ 
+ 
+ .right {
     float: right;
     background-color: black;
 }
+
 .left {
     float: left;
     background-color: black;
@@ -17,9 +15,16 @@ h6 {
     color: $white;
     font-family: $contFont;
 }
+
+
+form {
+    background-color: black;
+}
+
 .col-sm-2 {
     background-color: #000000;
     padding: 20px;
+    opacity: 80%;
     img {
         max-width: 120px;
     }
@@ -34,4 +39,7 @@ form {
     h4 {
         color: blanchedalmond;
     }
+}
+.col-sm-6 {
+    padding: 25;
 }

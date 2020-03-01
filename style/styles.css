@@ -1,17 +1,259 @@
-/* Error: Can't find stylesheet to import.
- *    ,
- * 12 | @import "partials/index";
- *    |         ^^^^^^^^^^^^^^^^
- *    '
- *   styles.scss 12:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a    \2577 \a 12 \2502  @import \"partials/index\";\d\a    \2502          ^^^^^^^^^^^^^^^^\a    \2575 \a   styles.scss 12:9  root stylesheet";
+@import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
+@import "https://fonts.googleapis.com/css?family=Open+Sans&display=swap";
+:root {
+  /* Change this to change the appearance of the hexaons */
+  --hex-width: 90px;
+  --hex-between: 5px;
+  /* Other hexagon dimentions */
+  --hex-height: calc(var(--hex-width) / 1.73);
+  --hex-margin: calc(var(--hex-width) / 2);
+  --hex-border: calc(var(--hex-margin) / 1.73);
+  --hex-transition: all .2s ease;
+  /* Colors */
+  --color-hex-default: #000000;
+  --color-hex-hover: #fbf6cc;
+  --color: #343434;
+  --red: #a21734;
+  --blue: #192c4a;
+  --whiteIsh: #fbf6cc;
 }
+
+.btn {
+  margin: 10px;
+  background-color: #a21734;
+  color: #fbf6cc;
+}
+
+.hexagon-container .btn {
+  position: absolute;
+  padding: 20px 0;
+}
+
+.banner {
+  padding: 90;
+  color: #a21734;
+}
+.banner img {
+  width: 200px;
+}
+
+img #img-0 .character-banner, img #img-1 .character-banner {
+  width: 120px;
+}
+
+nav {
+  padding: 22px 50px 22px 20px;
+  text-align: center;
+  background-color: #fbf6cc;
+  opacity: 40%;
+}
+
+.logo img {
+  float: left;
+  max-width: 80px;
+}
+
+h1 {
+  color: black;
+  text-shadow: 2px 2px #3D2721;
+  text-align: center;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  background-image: url(../images/texture3.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #000;
+  height: 100vh;
+  margin: auto;
+}
+
+footer {
+  background-color: black;
+  color: #fbf6cc;
+  height: 50px;
+}
+
+.right {
+  float: right;
+  background-color: black;
+}
+
+.left {
+  float: left;
+  background-color: black;
+}
+
+h6 {
+  color: #fbf6cc;
+  font-family: "Open Sans", sans-serif;
+}
+
+form {
+  background-color: black;
+}
+
+.col-sm-2 {
+  background-color: #000000;
+  padding: 20px;
+  opacity: 80%;
+}
+.col-sm-2 img {
+  max-width: 120px;
+}
+.col-sm-2 .two {
+  padding-top: 40px;
+}
+
+.two {
+  padding-top: 40px;
+}
+
+form h4 {
+  color: blanchedalmond;
+}
+
+.col-sm-6 {
+  padding: 25;
+}
+
+main .hexagon-container {
+  margin: 20px 0px;
+  background-color: black;
+  padding: 3% 0;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.dice {
+  width: 100px;
+  display: none;
+}
+
+#rollDice {
+  margin: 5%;
+  position: absolute;
+  float: right;
+  padding: 15 2;
+}
+
+.players {
+  background-color: #000000;
+  color: #fbf6cc;
+  padding: 20px;
+  opacity: 95%;
+}
+
+.token {
+  display: none;
+  position: absolute;
+  width: 50px;
+}
+
+.col-sm-2 {
+  margin: auto;
+}
+
+/* Hexagons */
+.hexagon-container {
+  display: grid;
+  grid-template-columns: var(--hex-width) var(--hex-width) var(--hex-width) var(--hex-width) var(--hex-width);
+  grid-auto-rows: calc(var(--hex-width) - 28.87px/2);
+  grid-gap: var(--hex-between) var(--hex-between);
+  padding-left: 25%;
+  opacity: 80%;
+}
+
+.hexagon {
+  align-items: center;
+  background-color: var(--color-hex-default);
+  display: flex;
+  color: #fbf6cc;
+  fill: white;
+  height: var(--hex-height);
+  justify-content: center;
+  margin: var(--hex-border) 0;
+  position: relative;
+  transition: var(--hex-transition);
+  width: var(--hex-width);
+}
+
+.hexagon::after,
+.hexagon::before {
+  border-left: var(--hex-margin) solid transparent;
+  border-right: var(--hex-margin) solid transparent;
+  content: "";
+  left: 0;
+  position: absolute;
+  transition: var(--hex-transition);
+  width: 0;
+}
+
+.hexagon::after {
+  border-top: var(--hex-border) solid var(--color-hex-default);
+  top: 100%;
+  width: 0;
+}
+
+.hexagon::before {
+  border-bottom: var(--hex-border) solid var(--color-hex-default);
+  bottom: 100%;
+}
+
+.hexagon:hover {
+  background-color: var(--color-hex-hover);
+  color: black;
+}
+
+.hexagon:hover::after,
+.hexagon:hover::before {
+  border-top-color: var(--color-hex-hover);
+  border-bottom-color: var(--color-hex-hover);
+}
+
+.hexagon:nth-child(10n+6),
+.hexagon:nth-child(10n+7),
+.hexagon:nth-child(10n+8),
+.hexagon:nth-child(10n+9),
+.hexagon:nth-child(10n+10) {
+  margin-left: calc(var(--hex-width) / 2 + var(--hex-between) / 2);
+}
+
+.hexagon > div {
+  height: 75%;
+  transition: var(--hex-transition);
+}
+
+/* Colors */
+.color {
+  background-color: var(--color);
+  font-size: xx-large;
+}
+
+.color::after,
+.color::before {
+  border-top-color: var(--color);
+  border-bottom-color: var(--color);
+}
+
+.color:hover {
+  fill: var(--color);
+}
+
+.multi-color {
+  background: var(--blue);
+}
+
+.multi-color::after,
+.multi-color::before {
+  border-top-color: var(--whiteIsh);
+  border-bottom-color: var(--red);
+}
+
+.multi-color:hover {
+  fill: var(--red);
+}
+
+/*# sourceMappingURL=styles.css.map */

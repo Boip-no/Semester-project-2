@@ -1,73 +1,94 @@
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style/styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style/styles.css">
     <title>Game of Thrones Board</title>
 </head>
 <body>
-  <script src="script/board.js"></script>
   <header>
-    <nav class="navbar mb-4">
-      <a class="navbar-brand" href="index.html"><img class="logo" src="images/logo3.png" alt=""></a>
-    </nav>
+    <nav>
+      <div>
+        <a class="logo"><img src="images/logo7.png" alt="hexagon tiles with dice and multi-coloured tile"></a>
+      </div>
+      <div>  
+        <h1>Game of Thrones Board Game</h1>
+      </div>
+  </nav>
   </header>
   <body>
-   <main class="container-fluid">
-    <div class="col-md-6 hexagon-container">
-      <div id="tile25" class="hexagon color">25</div>     
-      <div id="tile26" class="hexagon color">26</div>
-      <div id="tile27" class="hexagon color">27</div>
-      <div id="tile28" class="hexagon color">28</div>
-      <div id="tileGoal" class="hexagon color"><img src="images/logo3.png" width="50px" alt=""></div>
+   <main>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-2">
+            <div id="playerOne" class="players">
+              <img src="images/dice1.png" alt="Dice" class="dice" id="dice-0">   
+              <div id="name-0" class="name"></div>
+              <div id="culture-0" class="culture"></div>
+              <img id="img-0" class="character-banner" alt="Character banner" style="width: 150px; margin: 50px 0px;">
+              <div id="activePlayer-0" class="activePlayer"></div>
+            </div>
+          </div>
+          <div class="col-sm-8 hexagon-container">
+            <div id="tile25" class="hexagon color">25</div>     
+            <div id="tile26" class="hexagon color">26</div>
+            <div id="tile27" class="hexagon color">27</div>
+            <div id="tile28" class="hexagon color">28</div>
+            <div id="tile29" class="hexagon color"><img src="images/logo7.png" width="50px" alt=""></div>
 
-      <div id="tile24" class="hexagon color">24</div>
-      <div id="tile23" class="hexagon color">23</div>
-      <div id="tile22" class="hexagon color"><img src="images/challenge.png" width="60px" alt=""></div>
-      <div id="tile21" class="hexagon color">21</div>
-      <div id="tile20" class="hexagon color">20</div>
+            <div id="tile24" class="hexagon color">24</div>
+            <div id="tile23" class="hexagon color">23</div>
+            <div id="tile22" class="hexagon color"><img src="images/challenge.png" width="60px" alt=""></div>
+            <div id="tile21" class="hexagon color">21</div>
+            <div id="tile20" class="hexagon color">20</div>
 
-      <div id="tile15" class="hexagon color"><img src="images/challenge.png" width="60px" alt=""></div>
-      <div id="tile16" class="hexagon color">16</div>
-      <div id="tile17" class="hexagon color">17</div>
-      <div id="tile18" class="hexagon color">18</div>
-      <div id="tile19" class="hexagon color">19</div>
+            <div id="tile15" class="hexagon color"><img src="images/challenge.png" width="60px" alt=""></div>
+            <div id="tile16" class="hexagon color">16</div>
+            <div id="tile17" class="hexagon color">17</div>
+            <div id="tile18" class="hexagon color">18</div>
+            <div id="tile19" class="hexagon color">19</div>
 
-      <div id="tile14" class="hexagon color">14</div>
-      <div id="tile13" class="hexagon color">13</div>
-      <div id="tile12" class="hexagon color">12</div>
-      <div id="tile11" class="hexagon color">11</div>
-      <div id="tile10" class="hexagon color"><img src="images/challenge.png" width="60px" alt=""></div>
+            <div id="tile14" class="hexagon color">14</div>
+            <div id="tile13" class="hexagon color">13</div>
+            <div id="tile12" class="hexagon color">12</div>
+            <div id="tile11" class="hexagon color">11</div>
+            <div id="tile10" class="hexagon color"><img src="images/challenge.png" width="60px" alt=""></div>
 
-      <div id="tile5" class="hexagon color">5</div>
-      <div id="tile6" class="hexagon color"><img src="images/challenge.png" width="60px" alt=""></div>
-      <div id="tile7" class="hexagon color">7</div>
-      <div id="tile8" class="hexagon color">8</div>
-      <div id="tile9" class="hexagon color">9</div>
+            <div id="tile5" class="hexagon color">5</div>
+            <div id="tile6" class="hexagon color"><img src="images/challenge.png" width="60px" alt=""></div>
+            <div id="tile7" class="hexagon color">7</div>
+            <div id="tile8" class="hexagon color">8</div>
+            <div id="tile9" class="hexagon color">9</div>
 
-      <div id="tile4" class="hexagon color">4</div>
-      <div id="tile3" class="hexagon color">3</div>
-      <div id="tile2" class="hexagon color">2</div>
-      <div id="tile1" class="hexagon color"><img src="images/challenge.png" width="50px" alt=""></div>
-      <div id="tile0" class="hexagon color">START</div>
+            <div id="tile4" class="hexagon color">4</div>
+            <div id="tile3" class="hexagon color">3</div>
+            <div id="tile2" class="hexagon color">2</div>
+            <div id="tile1" class="hexagon color"><img src="images/challenge.png" width="50px" alt=""></div>
+            <div id="tile0" class="hexagon color">START</div>
+            <button class="btn btn-roll">
+              <i class="ion-ios-loop"></i>Roll Dice
+            </button>
+          </div>
+          <img id="token-0" class="token" src="images/tokenSt.png" alt="">
+          <img id="token-1" class="token" src="images/tokenTa.png" alt="">
+          <div class="col-sm-2">
+            
+            <div  id="playerTwo" class="players">
+              <img src="images/dice1.png" alt="Dice" class="dice" id="dice-1">   
+              <div id="name-1" class="name"></div>
+              <div id="culture-1" class="culture"></div>
+              <img id="img-1" class="character-banner" alt="Character banner" style="width: 150px; margin: 50px 0px;">
+              <div id="activePlayer-1" class="activePlayer"></div>
+            </div>
+          </div>
+        </div>
     </div>
-    <div class="col-md-6 hexagon-container">
-        <button class="btn-hold" id="rollDice">Roll Dice</button>
-        <div id="myDice"></div>
-
-        <img src="images/dice1.png" alt="Dice" class="dice" id="rollDice">
-        <img src="images/dice4.png" alt="Dice" class="dice" id="rollDice">
-    </div>
-  </main>
-  <footer>
-   <p>Copyright by Jorun Pihl Bratteng</p>
-  </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script src="script/script.js"></script>
+      
+    </main>
+    <footer>
+    <p>Copyright by Jorun Pihl Bratteng</p>
+    </footer>
   <script src="script/board.js"></script>
 </body>
 </html>

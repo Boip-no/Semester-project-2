@@ -1,13 +1,11 @@
 @import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
-@import "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js";
-@import "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js";
-@import "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js";
-
 @import "partials/variables";
 @import "partials/typography";
+@import "partials/btn";
+@import "partials/img";
 
 @import "partials/nav";
-@import "partials/character";
 @import "partials/body";
-@import "partials/index";
+@import "partials/footer";
+@import "partials/character";
 @import "partials/board";
