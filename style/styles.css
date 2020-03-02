@@ -20,8 +20,8 @@
 
 .btn {
   margin: 10px;
-  background-color: #a21734;
-  color: #fbf6cc;
+  background-color: #fbf6cc;
+  color: #a21734;
 }
 
 .hexagon-container .btn {
@@ -30,11 +30,12 @@
 }
 
 .banner {
-  padding: 90;
-  color: #a21734;
+  padding: 50;
+  color: #fbf6cc;
+  font-size: large;
 }
 .banner img {
-  width: 200px;
+  width: 150px;
 }
 
 img #img-0 .character-banner, img #img-1 .character-banner {
@@ -44,8 +45,6 @@ img #img-0 .character-banner, img #img-1 .character-banner {
 nav {
   padding: 22px 50px 22px 20px;
   text-align: center;
-  background-color: #fbf6cc;
-  opacity: 40%;
 }
 
 .logo img {
@@ -55,35 +54,36 @@ nav {
 
 h1 {
   color: black;
-  text-shadow: 2px 2px #3D2721;
+  padding-bottom: inherit;
+  text-shadow: 2px 0px #3D2721;
   text-align: center;
 }
 
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   text-align: center;
-  background-image: url(../images/texture3.jpg);
-  background-size: cover;
-  background-position: center;
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
   color: #000;
-  height: 100vh;
   margin: auto;
 }
 
-footer {
-  background-color: black;
-  color: #fbf6cc;
-  height: 50px;
+.container-fluid {
+  background-image: url(../images/logo7.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+h3 h4 h5 h6 p {
+  font-family: "Open Sans", sans-serif;
 }
 
 .right {
   float: right;
-  background-color: black;
 }
 
 .left {
   float: left;
-  background-color: black;
 }
 
 h6 {
@@ -91,17 +91,14 @@ h6 {
   font-family: "Open Sans", sans-serif;
 }
 
-form {
-  background-color: black;
+.choose-character img {
+  max-height: 100px;
 }
 
 .col-sm-2 {
   background-color: #000000;
   padding: 20px;
   opacity: 80%;
-}
-.col-sm-2 img {
-  max-width: 120px;
 }
 .col-sm-2 .two {
   padding-top: 40px;
@@ -149,7 +146,7 @@ main .hexagon-container {
 .token {
   display: none;
   position: absolute;
-  width: 50px;
+  width: 70px;
 }
 
 .col-sm-2 {

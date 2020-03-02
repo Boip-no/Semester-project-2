@@ -1,8 +1,8 @@
 nav {
   padding: 22px 50px 22px 20px;
   text-align: center;
-  background-color: $white;
-  opacity: 40%;
+  // background-color: $white;
+  // opacity: 40%;
 }
 
 .logo {
@@ -13,6 +13,8 @@ nav {
   }
   h1 {
     color: black;
-    text-shadow: 2px 2px #3D2721;
+    padding-bottom: inherit;
+    text-shadow: 2px 0px #3D2721;
     text-align: center;
 }
+

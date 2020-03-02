@@ -1,14 +1,9 @@
-
- 
- 
- .right {
+.right {
     float: right;
-    background-color: black;
 }
 
 .left {
     float: left;
-    background-color: black;
 }
 
 h6 {
@@ -16,18 +11,17 @@ h6 {
     font-family: $contFont;
 }
 
-
-form {
-    background-color: black;
+.choose-character {
+    img {
+        max-height: 100px;
+    }
 }
 
 .col-sm-2 {
     background-color: #000000;
     padding: 20px;
     opacity: 80%;
-    img {
-        max-width: 120px;
-    }
+   
     .two {
         padding-top: 40px;
     }

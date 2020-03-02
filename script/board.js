@@ -44,14 +44,8 @@ function initialization() {
     document.getElementById("name-1").innerHTML = playerTwo.Name;
 
     // Show tokens
-var token = [
-    {tokenImg: "tokenTa.jpg"},
-    {tokenImg: "tokenBa.jpg"},
-    {tokenImg: "tokenSt.jpg"},
-    {tokenImg: "tokenCl.jpg"},
-    {tokenImg: "tokenMo.jpg"},
-    {tokenImg: "tokenLa.jpg"},
-]
+    document.getElementById("token-0").src = "images/token"+playerOne.img;
+    document.getElementById("token-1").src = "images/token"+playerTwo.img;
 
     document.getElementById("token-0").style.display = "block";
     document.getElementById("token-1").style.display = "block";
@@ -76,29 +70,29 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
     }
 
     // Custom events
-    if (scores[activePlayer] == 1) {
-        alert((activePlayer == 0 ? playerOne.Name : playerTwo.Name) + ", you've been ambushed! Move back to start!");
-        scores[activePlayer] -= 1;
-        updatePosition(activePlayer, scores[activePlayer]);
-    }
-    else if(scores[activePlayer] == 6) {
-        alert((activePlayer == 0 ? playerOne.Name : playerTwo.Name) + ", Daenarys dragons blocks the way! Move back 5 tiles!");
+    if(scores[activePlayer] == 6) {
+        alert((activePlayer == 0 ? playerOne.Name : playerTwo.Name) + ", Daenarys's dragons blocks the way! Move back 5 tiles!");
         scores[activePlayer] -= 5;
         updatePosition(activePlayer, scores[activePlayer]);
     }
     else if(scores[activePlayer] == 10) {
-        alert((activePlayer == 0 ? playerOne.Name : playerTwo.Name) + ", Jamie Lannister is blocking the way! Move back 2 tiles!");
+        alert((activePlayer == 0 ? playerOne.Name : playerTwo.Name) + ", Jamie and Brienne is blocking the way! Move back 2 tiles!");
         scores[activePlayer] -= 2;
         updatePosition(activePlayer, scores[activePlayer]);
     }
     else if(scores[activePlayer] == 15) {
-        alert((activePlayer == 0 ? playerOne.Name : playerTwo.Name) + ", You receive reinforcements! Move ahead 2 tiles!");
+        alert((activePlayer == 0 ? playerOne.Name : playerTwo.Name) + ", you receive reinforcements! Move ahead 2 tiles!");
         scores[activePlayer] += 2;
         updatePosition(activePlayer, scores[activePlayer]);
     }
     else if(scores[activePlayer] == 22){
-        alert((activePlayer == 0 ? playerOne.Name : playerTwo.Name) + ", generic text! Move back 2 tiles!");
+        alert((activePlayer == 0 ? playerOne.Name : playerTwo.Name) + ", destruction of the Great Sept of Baelor! Move back 2 tiles!");
         scores[activePlayer] -= 2;
+        updatePosition(activePlayer, scores[activePlayer]);
+    }
+    if (scores[activePlayer] == 27) {
+        alert((activePlayer == 0 ? playerOne.Name : playerTwo.Name) + ", you've been ambushed! Move back to start!");
+        scores[activePlayer] = 0;
         updatePosition(activePlayer, scores[activePlayer]);
     }
 
@@ -106,12 +100,15 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
         // Winner!
         alert((activePlayer == 0 ? playerOne.Name : playerTwo.Name) + ", won the Boardgame of Thrones!");
         // SEND WINNER OVER TO WINNER PAGE AND REDIRECT
-            localStorage.setItem("winner", winner.Name);
-            return true;
+            localStorage.setItem("winner", (activePlayer == 0 ? playerOne.Name : playerTwo.Name));
+            window.location.replace("winner.html");
         }
 
     // Switch Player
-    nextPlayer();
+    
+    if (dice < 6){
+        nextPlayer();
+    }
 });
 
 // //- use character info to style the tokens by adding classes
@@ -126,9 +123,6 @@ function updatePosition(tokenId, position){
 function nextPlayer() {
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
     console.log((activePlayer == 0 ? playerOne.Name : playerTwo.Name) + " has finished their turn. " + (activePlayer == 1 ? playerOne.Name : playerTwo.Name) + " is up next!")
-    
-    // Indicate which player is active on board
-    // --- code goes here
 }
 
 initialization();

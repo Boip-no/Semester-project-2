@@ -1,5 +1,3 @@
 //- fetch and display winner from local storage
-function passValue(){
-    localStorage.getItem("winner", winner.Name);
-    return true;
-}
+let winnerName = localStorage.getItem("winner");
+document.getElementById("winner").innerHTML = winnerName;
